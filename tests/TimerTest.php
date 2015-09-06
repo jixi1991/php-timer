@@ -8,18 +8,9 @@
  * file that was distributed with this source code.
  */
 
-require_once dirname(dirname(__FILE__)) . '/PHP/Timer.php';
-
 /**
  * Tests for PHP_Timer.
  *
- * @package    PHP
- * @subpackage Timer
- * @author     Sebastian Bergmann <sebastian@phpunit.de>
- * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
- * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version    Release: @package_version@
- * @link       http://github.com/sebastianbergmann/php-timer
  * @since      Class available since Release 1.0.0
  */
 class PHP_TimerTest extends PHPUnit_Framework_TestCase
@@ -40,7 +31,8 @@ class PHP_TimerTest extends PHPUnit_Framework_TestCase
     public function testSecondsToTimeString($string, $seconds)
     {
         $this->assertEquals(
-          $string, PHP_Timer::secondsToTimeString($seconds)
+            $string,
+            PHP_Timer::secondsToTimeString($seconds)
         );
     }
 
@@ -50,7 +42,8 @@ class PHP_TimerTest extends PHPUnit_Framework_TestCase
     public function testTimeSinceStartOfRequest()
     {
         $this->assertStringMatchesFormat(
-          '%f %s', PHP_Timer::timeSinceStartOfRequest()
+            '%f %s',
+            PHP_Timer::timeSinceStartOfRequest()
         );
     }
 
@@ -61,7 +54,8 @@ class PHP_TimerTest extends PHPUnit_Framework_TestCase
     public function testResourceUsage()
     {
         $this->assertStringMatchesFormat(
-          'Time: %s, Memory: %s', PHP_Timer::resourceUsage()
+            'Time: %s, Memory: %s',
+            PHP_Timer::resourceUsage()
         );
     }
 
